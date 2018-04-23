@@ -19,23 +19,24 @@
             android:ems="10"
             android:inputType="number"
             app:layout_column="0"
-            app:layout_columnSpan="2"/>
+            app:layout_columnSpan="1"/>
 
         <TextView
             android:id="@+id/amountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:hint="@string/enter_amount"
             android:text="TextView"
-            app:layout_row="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_column="0"
             app:layout_columnSpan="2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            app:layout_row="0" />
 
         <TextView
             android:id="@+id/percentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/tip_percentage"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_column="0"
             app:layout_row="1" />
@@ -51,7 +52,7 @@
             android:id="@+id/tipLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/tip"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
@@ -65,7 +66,7 @@
             android:id="@+id/totalLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/total"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
