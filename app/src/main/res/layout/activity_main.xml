@@ -16,17 +16,22 @@
             android:id="@+id/amountEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:digits="0123456789"
             android:ems="10"
             android:inputType="number"
+            android:maxLength="6"
             app:layout_column="0"
-            app:layout_columnSpan="1"/>
+            app:layout_columnSpan="2" />
 
         <TextView
             android:id="@+id/amountTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#bbdefb"
+            android:elevation="@dimen/elevation"
+            android:gravity="fill_horizontal"
             android:hint="@string/enter_amount"
-            android:text="TextView"
+            android:padding="@dimen/textview_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_column="0"
             app:layout_columnSpan="2"
@@ -36,22 +41,24 @@
             android:id="@+id/percentTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="right"
+            app:layout_gravity="clip_vertical|right"
             android:text="@string/tip_percentage"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_column="0"
-            app:layout_row="1" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <SeekBar
             android:id="@+id/percentSeekBar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_row="1"
-            app:layout_column="1"/>
+            android:layout_height="@dimen/seekbar_height"
+            android:max="30"
+            android:progress="15"
+            app:layout_gravity="fill_horizontal" />
 
         <TextView
             android:id="@+id/tipLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="@string/tip"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -59,13 +66,18 @@
             android:id="@+id/tipTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:background="@color/result_background"
+            android:elevation="@dimen/elevation"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_gravity="fill_horizontal" />
 
         <TextView
             android:id="@+id/totalLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="right"
             android:text="@string/total"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -73,8 +85,12 @@
             android:id="@+id/totalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:background="@color/result_background"
+            android:elevation="@dimen/elevation"
+            android:gravity="center"
+            android:padding="@dimen/textview_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_gravity="fill_horizontal" />
 
     </android.support.v7.widget.GridLayout>
 
