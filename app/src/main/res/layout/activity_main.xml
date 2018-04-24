@@ -29,12 +29,12 @@
             android:layout_height="wrap_content"
             android:background="#bbdefb"
             android:elevation="@dimen/elevation"
-            android:gravity="fill_horizontal"
             android:hint="@string/enter_amount"
             android:padding="@dimen/textview_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_column="0"
             app:layout_columnSpan="2"
+            app:layout_gravity="fill_horizontal"
             app:layout_row="0" />
 
         <TextView
@@ -60,7 +60,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="@string/tip"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_gravity="right" />
 
         <TextView
             android:id="@+id/tipTextView"
@@ -79,7 +80,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="@string/total"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_gravity="right|clip_vertical" />
 
         <TextView
             android:id="@+id/totalTextView"
