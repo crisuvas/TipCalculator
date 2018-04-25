@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
     }
     private fun calculate(){
         percentTextView?.text = percentFormat.format(percent)
-        var tip: Double = billAmount * percent
-        var total: Double = billAmount + tip
+        val tip: Double = billAmount * percent
+        val total: Double = billAmount + tip
 
         tipTextView?.text = currencyFormat.format(tip)
         totalTextView?.text = currencyFormat.format(total)
