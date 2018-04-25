@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
 
     private var billAmount = 0.0
     private var percent = 0.15
+    private var tip = 0.0
+    private var total = 0.0
     private var amountTextView: TextView? = null
     private var percentTextView: TextView? = null
     private var tipTextView: TextView? = null
@@ -39,6 +41,14 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
         amountEditText!!.addTextChangedListener(this)
         percentSeekBar!!.setOnSeekBarChangeListener(this)
 
+    }
+    private fun calculate(){
+        percentTextView?.text = percentFormat.format(percent)
+        tip = billAmount * percent
+        total = billAmount + tip
+
+        tipTextView?.text = currencyFormat.format(tip)
+        totalTextView?.text = currencyFormat.format(total)
     }
     override fun afterTextChanged(s: Editable?) {
     }
