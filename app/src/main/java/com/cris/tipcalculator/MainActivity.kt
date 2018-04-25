@@ -16,14 +16,14 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
 
     private var billAmount = 0.0
     private var percent = 0.15
-    private var tip = 0.0
-    private var total = 0.0
+    //private var tip = 0.0
+    //private var total = 0.0
     private var amountTextView: TextView? = null
     private var percentTextView: TextView? = null
     private var tipTextView: TextView? = null
     private var totalTextView: TextView? = null
-    private var amountEditText: EditText? = null
-    private var percentSeekBar: SeekBar? = null
+    //private var amountEditText: EditText? = null
+    //private var percentSeekBar: SeekBar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,19 +33,21 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
         percentTextView = findViewById(R.id.percentTextView)
         tipTextView = findViewById(R.id.tipTextView)
         totalTextView = findViewById(R.id.totalTextView)
-        amountEditText = findViewById(R.id.amountEditText)
-        percentTextView = findViewById(R.id.percentTextView)
+        //amountEditText = findViewById(R.id.amountEditText)
+        //percentTextView = findViewById(R.id.percentTextView)
         tipTextView?.text = currencyFormat.format(0)
         totalTextView?.text = currencyFormat.format(0)
 
-        amountEditText!!.addTextChangedListener(this)
-        percentSeekBar!!.setOnSeekBarChangeListener(this)
+        val amountEditText : EditText = findViewById(R.id.amountEditText)
+        amountEditText.addTextChangedListener(this)
+        val percentSeekBar : SeekBar = findViewById(R.id.percentSeekBar)
+        percentSeekBar.setOnSeekBarChangeListener(this)
 
     }
     private fun calculate(){
         percentTextView?.text = percentFormat.format(percent)
-        tip = billAmount * percent
-        total = billAmount + tip
+        var tip: Double = billAmount * percent
+        var total: Double = billAmount + tip
 
         tipTextView?.text = currencyFormat.format(tip)
         totalTextView?.text = currencyFormat.format(total)
