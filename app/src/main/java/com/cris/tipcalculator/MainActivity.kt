@@ -57,9 +57,20 @@ class MainActivity : AppCompatActivity(), TextWatcher, SeekBar.OnSeekBarChangeLi
     }
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        try{
+            billAmount = java.lang.Double.parseDouble(s.toString())/100.0
+            amountTextView?.text = currencyFormat.format(billAmount)
+        }
+        catch(e: NumberFormatException){
+            amountTextView?.text = ""
+            billAmount = 0.0
+        }
+        calculate()
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        percent = progress/100.0
+        calculate()
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) {
